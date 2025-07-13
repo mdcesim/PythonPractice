@@ -75,15 +75,12 @@ class ShoppingCart:
         self.items_in_cart = [item["name"] for item in self.cart]
         self.prices_in_cart = [item["price"] for item in self.cart]
         
-        # الحصول على الأسعار الأصلية بناءً على العناصر في السلة
         self.original_prices = [next(item["price"] for item in self.list if item["name"] == cart_item["name"]) 
                                 for cart_item in self.cart]
         
-        # حساب الفرق بين السعر في السلة والسعر الأصلي
         self.price_difference = [cart_price - original_price 
                                 for cart_price, original_price in zip(self.prices_in_cart, self.original_prices)]
 
-        # رسم البياني
         plt.bar(self.items_in_cart, self.price_difference)
         plt.xlabel("Items")
         plt.ylabel("Price Difference")
