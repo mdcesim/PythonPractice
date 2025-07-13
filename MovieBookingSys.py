@@ -1,4 +1,4 @@
-# MUHAMMED CESİM U23LMEK801
+# MUHAMMED CESİM
 
 def user_input():
     # Ask the user to input the movie name and validate it
